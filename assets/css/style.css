@@ -1,0 +1,440 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    font-size: 14px;
+    --fontComic : 'Comic Sans MS';
+}
+
+body{
+    background-color: #fff;
+    -ms-overflow-style: none;
+    scrollbar-width: none;  
+}
+/* Hilangkan Scrollbar */
+body::-webkit-scrollbar{
+    display: none;
+}
+
+aside {
+    background: #171717;
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    transition: .3s;
+    z-index: 1;
+}
+
+#sidebar{
+    padding: 40px 10px 0 10px;  
+}
+#sidebar #img{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 0 20px 0;
+}
+
+#sidebar #img img{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid #212431;   
+}
+
+#sidebar #medsos{
+    font-family: var(--fontComic);
+    text-align: center;
+    margin: 0 0 10px 0;
+}
+
+#sidebar #medsos h3{
+    font-size: 1.5rem;
+    color: #e5e5e5;
+    letter-spacing: 1px;
+}
+
+#sidebar #medsos a {
+    background-color: #212431;
+    padding: 5px 10px;
+    border-radius: 50%;
+    margin: 0 15px 0 0;
+    font-size: 20px;
+    line-height: 5rem; 
+    color: #fff; 
+    text-decoration: none;
+    transition: .4s;
+}
+
+#sidebar #medsos .instagram:hover{
+    color: rgb(251, 0, 0);
+    background-color: #fff;
+}
+#sidebar #medsos .twitter:hover{
+    color: rgb(54, 160, 225);
+    background-color: #fff;
+}
+#sidebar #medsos .facebook:hover{
+    color: rgb(0, 105, 171);
+    background-color: #fff;
+}
+#sidebar #medsos .skype:hover{
+    color: rgb(138, 210, 255);
+    background-color: #fff;
+}
+
+
+#sidebar #menu ul li{
+    padding: 15px 30px;
+    line-height: 35px;
+}
+
+#sidebar #menu ul li:hover{
+
+    border-left: 3px solid cyan;
+    background: #1e1e1e!important;
+    color: cyan!important;
+    cursor: pointer;
+    
+}
+
+#sidebar #menu ul li a{
+    font-family: var(--fontComic);
+    color: #e5e5e5;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.2rem;
+    width: 100%;
+    display: block;
+}
+
+#sidebar #menu ul li a:hover{
+    color: cyan!important;
+}
+
+
+.menu-toggle::before{
+    content: '';
+    width: 50px;
+    height: 50px;
+    background-color: #21AEE4;
+    /* opacity: .8; */
+    position: absolute;
+    border-radius: 50%;
+}
+
+.menu-toggle{
+    position: fixed;
+    right: 30px;
+    top: 30px;  
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    height: 30px;
+    visibility: hidden;
+}
+
+.menu-toggle input[type="checkbox"] {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    z-index: 999;
+    opacity: 0;
+}
+.menu-toggle input[type="checkbox"]:hover{
+    cursor: pointer;
+}
+
+.menu-toggle span{
+    width: 28px;
+    height: 3px;
+    background-color: #fff;
+    z-index: 1;
+    border-radius: 10px;
+    transition: all .1s;
+}
+
+/* Humburger menu animation */
+
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+}
+.menu-toggle span:last-child{
+    transform-origin: 0 100%;
+}
+.menu-toggle input[type="checkbox"]:checked ~ span:nth-child(2){
+    transform: rotate(45deg) translate(5px, -3px);
+}
+.menu-toggle input[type="checkbox"]:checked ~ span:nth-child(3){
+    transform: scale(0);
+}
+.menu-toggle input[type="checkbox"]:checked ~ span:last-child{
+    transform: rotate(-45deg) translate(4px, 4px);
+}
+
+/* Content */
+
+.content{
+    margin: 0 0 0 300px;
+    transition: .3s;
+}
+
+/* Hero image */
+#hero-image{
+    height: 85vh;
+    width: 100%;
+    background-image: url('../img/hero-image.jpg');
+    /* background-position: -200px -100px; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--fontComic);
+    background-color: #F54768;
+    /* background-color: red; */
+}
+
+#hero-image h3 {
+    font-size: 2.5vmax;
+    line-height: 2em;
+}
+#hero-image p {
+    font-size: 2rem;
+}
+
+/* Main */
+/* About */
+
+#main{
+    background-color: #fff;
+    /* padding: 3em 2em; */
+}
+#about,
+#skills,
+#contact{
+    padding: 3em 5em;
+}
+
+#about h5, #skills h5, #contact h5{
+    font-family: var(--fontComic);
+    font-size: 2.5rem;
+    line-height: 60px;
+    border-bottom: 2px solid #F54768;
+    width: 2em;
+    margin-bottom: 1.5rem;
+}
+#about > p, #contact > p{  
+    font-size: 1.4rem;
+    line-height: 1.5em;
+    text-align: justify;
+}
+
+#about .bio{
+    margin: 2em 0;
+    display: grid;
+    grid-template-columns: minmax(280px, 20vmax) minmax(300px, 1fr);
+    gap: 2em;
+}
+.bio .col-img img{
+    max-width: 20vmax;
+    min-width: 280px;
+    border-radius: 7px;
+}
+.bio .col-biografi > strong{
+    font-size: 1.8rem;
+    line-height: 3rem;
+}
+
+.col-biografi > p {
+    font-size: 1.3rem;
+    line-height: 2rem;
+    text-align: justify;
+    font-style: italic;
+}
+
+.data-biografi{
+    margin: 2em 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.col-data > p{
+    font-family: var(--fontComic);
+    font-size: 1.3rem;
+    line-height: 2.5rem;
+}
+
+/* Skills */
+#skills{
+    background-color: #F5F8FD;
+}
+
+.container-skill{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.box-circular {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--fontComic);
+}
+
+.circular-progress{
+    margin: 2em 0;
+    position: relative;
+    height: 170px;
+    width: 170px;
+    background-color: #21AEE4;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.circular-progress::before{
+    content: '';
+    position: absolute;
+    height: 84%;
+    width: 84%;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.value-progress-container{
+    position: relative;
+    font-size: 2rem;
+    color: #212431;
+}
+
+.box-circular > span{
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+
+
+/* Contact */
+#contact{
+    height: 900px;
+    /* background-color: antiquewhite; */
+}
+.container-contact{
+    height: 500px;
+    /* border: 1px solid red; */
+    margin: 2em 0;
+    padding: 2em 1em;
+    display: grid;
+    grid-template-columns: minmax(350px, .5fr) 1fr;
+    gap: 1em;
+}
+
+.card {
+    background-color: #fff;
+    height: 500px;
+    border-radius: 5px;
+    box-shadow: 0 0 0px #212431,
+    0 0 0px #212431,
+    0 0 0px #212431,
+    0 0 10px #212431;
+    padding: 2em;
+}
+
+.address i{
+    font-size: 2rem;
+    margin: 0 .7em 0 0;
+}
+
+
+.address strong{
+    font-size: 1.7rem;
+    font-family: var(--fontComic);
+}
+
+.address p{
+    text-indent: 2.1em;
+    font-size: 1.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Js Point */
+aside.slideSidebar{
+    left: 0;
+}
+
+.content.slideContent{
+    margin: 0;
+}
+
+
+
+
+/* Breakpoint  Tablet*/
+@media screen and (max-width: 1200px) {
+    aside{
+        left: -300px;
+    }
+    .content{
+        margin: 0;
+    }   
+    .menu-toggle{
+        visibility:visible;
+    }
+    #hero-image h3 {
+        font-size: 4vmax;
+    }
+    #hero-image p {
+        font-size: 2rem;
+    }
+    #about h5{
+        font-size: 2rem;
+    }
+    /* .container-skill{
+        display: flex;
+        
+        grid-template-columns: 1fr 1fr ;
+    
+    } */
+    
+}
+
+/* Breakpoint HP */
+@media screen and (max-width: 1000px) {
+    #hero-image p, #about p {
+        font-size: 1.2rem;
+    }
+    #about .bio,
+    .data-biografi,
+    .container-contact{
+        grid-template-columns: 1fr;
+    }
+    .bio .col-img{
+        display: flex;
+        justify-content: center;
+    }
+    .bio .col-img img{
+       min-width: 80vmin;
+    }
+    #about,
+    #skills{
+    padding: 3em 2.4em;
+    }
+}
