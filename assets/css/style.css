@@ -324,12 +324,10 @@ aside {
 
 /* Contact */
 #contact{
-    height: 900px;
-    /* background-color: antiquewhite; */
+  
+    background-color: fff;
 }
 .container-contact{
-    height: 500px;
-    /* border: 1px solid red; */
     margin: 2em 0;
     padding: 2em 1em;
     display: grid;
@@ -442,16 +440,10 @@ aside.slideSidebar{
     #about h5{
         font-size: 2rem;
     }
-    /* .container-skill{
-        display: flex;
-        
-        grid-template-columns: 1fr 1fr ;
-    
-    } */
     
 }
 
-/* Breakpoint HP */
+/* Breakpoint Tablet */
 @media screen and (max-width: 1000px) {
     #hero-image p, #about p {
         font-size: 1.2rem;
@@ -472,5 +464,20 @@ aside.slideSidebar{
     #about,
     #skills{
     padding: 3em 2.4em;
+    }
+
+   .container-contact{
+    padding: 0;
+   }
+}
+
+
+/* Breakpoint HP */
+@media screen and (max-width: 567px){
+    
+    #about,
+    #skills,
+    #contact{
+        padding: 3em 1.2em;
     }
 }
